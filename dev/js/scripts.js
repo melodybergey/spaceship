@@ -36,95 +36,52 @@ ready(() => {
   let flamesTL = gsap.timeline({paused:true});
 
 
-  function init(){
-    //***********  fadeInTL init ****************
-    gsap.set("#moon", {alpha:0});
-    //*********** zoomTL init ****************
-    gsap.set(["#orange-mtn","#red-mtn","#front-mtns",".trees"], {transformOrigin:"center center"});
-    //*********** spaceshipTL init ****************
-    gsap.set(["#window",".engines"], {transformOrigin:"center center"});
-    gsap.set(".flames", {display:"none"});
-    gsap.set(".left-engines", {rotation:90});
-    gsap.set(".right-engines", {rotation:-90});
-    //*********** liftOffTL init ****************
-    gsap.set("#space-ship",{transformOrigin:"center"});
-    gsap.set(["#smoke-1","#smoke-2"],{transformOrigin:"center bottom"});
-    gsap.set(".smoke",{display:"none"});
-
-    //*********** flightTL init ****************
-    // gsap.set("#space-ship", {xPercent:-50, yPercent:-50, transformOrigin:"50% 50%"});
-    //*********** moonLandingTL init ****************
-
-
-  }
-
-  //Nested Timelines
-  //***********  fadeInTL  ****************
-  function fadeInTL(){
-    let tl = gsap.timeline();
-
-    tl.from("#background-fill", {alpha:0, duration:4, scale:20})
-    .from("#clouds g", {alpha:0, stagger:1, duration:2}, "-=3")
-
-    ;//tl END
-
-    return tl;
-
-  }
-
-  //*********** zoomTL ****************
-  function zoomTL(){
-    let tl = gsap.timeline();
-
-    tl.from("#orange-mtn", {duration:6, scale:10, y:"+=1500", ease:"power4.out"}, "zoom")
-    .from("#red-mtn", {duration:5.75, scale:10, y:"+=800", ease:"power4.out", tranformOrigin:"50% 50%"}, "zoom")
-    .from("#front-mtns", {duration:5.5, scale:10, y:"+=600", ease:"power4.out"}, "zoom")
-    .from("#trees-5", {duration:5.5, scale:10, y:"+=420", ease:"power4.out"}, "zoom")
-    .from("#trees-4", {duration:5.5, scale:10, y:"+=420", ease:"power4.out"}, "zoom")
-    .from("#trees-3", {duration:5.25, scale:10, y:"+=420", ease:"power4.out", onStart:callBackTest}, "zoom")
-    .from("#trees-2", {duration:5, scale:10, y:"+=420", ease:"power4.out"}, "zoom")
-    .from("#trees-1", {duration:4.75, scale:10, y:"+=400", ease:"power4.out"}, "zoom")
-
-    ;//tl END
-
-    return tl;
-
-  }
 
   //*********** spaceshipTL ****************
+
   function spaceshipTL(){
     let tl = gsap.timeline();
 
-    tl.from("#space-ship",{y:"+=500", duration:0.5})
-    .from("#shadow",{alpha:0, duration:0.5})
-    .from("#cone",{alpha:0, duration:0.5})
-    .from("#window",{scale:0, duration:0.5})
-    .from("#window-bg",{alpha:0, duration:0.5})
-    .from("#window-glass",{alpha:0, duration:0.5})
-    .from("#window-bars",{alpha:0, duration:0.5})
+    tl.to("#Rocket", {duration: 5, motionPath: {path: "#Line", align: "#Line", alignOrigin: [0,0]}});
 
-    .from("#eng-middle-left",{alpha:0, duration:0.25},"mid-eng-1")
-    //.from("#left-mid-bone",{scale:0, duration:0.25},"mid-eng-2")
-    .to("#eng-middle-left",{rotation:0, duration:0.25},"mid-eng-3")
-    .from("#eng-middle-right",{alpha:0, duration:0.25},"mid-eng-1")
-    //.from("#right-mid-bone",{scale:0, duration:0.25},"mid-eng-2")
-    .to("#eng-middle-right",{rotation:0, duration:0.25},"mid-eng-3")
-
-    .from("#eng-left",{alpha:0, duration:0.25},"eng-1")
-    //.from("#left-bone",{scale:0, duration:0.25},"eng-2")
-    .to("#eng-left",{rotation:0, duration:0.25},"eng-3")
-    .from("#eng-right",{alpha:0, duration:0.25},"eng-1")
-    //.from("#right-bone",{scale:0, duration:0.25},"eng-2")
-    .to("#eng-right",{rotation:0, duration:0.25},"eng-3")
-    .from("#eng-left-bottom",{y:"-=20", duration:0.5})
-    .from("#eng-right-bottom",{y:"-=20", duration:0.5},"-=0.25")
-    .to("#space-ship",{y:"+=320", duration:2, ease: "bounce.out"})
-
-    ;//tl END
+    //tl END
 
     return tl;
 
   }
+  // function spaceshipTL(){
+  //   let tl = gsap.timeline();
+
+  //   tl.from("#space-ship",{y:"+=500", duration:0.5})
+  //   .from("#shadow",{alpha:0, duration:0.5})
+  //   .from("#cone",{alpha:0, duration:0.5})
+  //   .from("#window",{scale:0, duration:0.5})
+  //   .from("#window-bg",{alpha:0, duration:0.5})
+  //   .from("#window-glass",{alpha:0, duration:0.5})
+  //   .from("#window-bars",{alpha:0, duration:0.5})
+
+  //   .from("#eng-middle-left",{alpha:0, duration:0.25},"mid-eng-1")
+  //   //.from("#left-mid-bone",{scale:0, duration:0.25},"mid-eng-2")
+  //   .to("#eng-middle-left",{rotation:0, duration:0.25},"mid-eng-3")
+  //   .from("#eng-middle-right",{alpha:0, duration:0.25},"mid-eng-1")
+  //   //.from("#right-mid-bone",{scale:0, duration:0.25},"mid-eng-2")
+  //   .to("#eng-middle-right",{rotation:0, duration:0.25},"mid-eng-3")
+
+  //   .from("#eng-left",{alpha:0, duration:0.25},"eng-1")
+  //   //.from("#left-bone",{scale:0, duration:0.25},"eng-2")
+  //   .to("#eng-left",{rotation:0, duration:0.25},"eng-3")
+  //   .from("#eng-right",{alpha:0, duration:0.25},"eng-1")
+  //   //.from("#right-bone",{scale:0, duration:0.25},"eng-2")
+  //   .to("#eng-right",{rotation:0, duration:0.25},"eng-3")
+  //   .from("#eng-left-bottom",{y:"-=20", duration:0.5})
+  //   .from("#eng-right-bottom",{y:"-=20", duration:0.5},"-=0.25")
+  //   .to("#space-ship",{y:"+=320", duration:2, ease: "bounce.out"})
+
+  //   ;//tl END
+
+  //   return tl;
+
+  // }
 
   //*********** liftOffTL ****************
 
@@ -158,7 +115,7 @@ ready(() => {
         path:"#flightPath",
         align:"#flightPath",
         alignOrigin:[0.5, 0.5],
-        autoRotate:90,
+        autoRotate:90
         // start: 0.1,
         // end: 0.5,
       },
