@@ -33,7 +33,7 @@ ready(() => {
   /* add your code here */
   //Variables
   let mainTL = gsap.timeline({id:"main"});
-  let flamesTL = gsap.timeline({paused:true});
+  // let flamesTL = gsap.timeline({paused:true});
 
 
 
@@ -53,19 +53,19 @@ ready(() => {
 
 
 //1. set initial properties
-init();
+// init();
 
 //2. show content - prevents FOUC
 gsap.set('#svg-container',{visibility:"visible"});
 
 //3. BUILD Main timeline
-mainTL.add(fadeInTL())
-.add(zoomTL(),"-=4")
-.add(spaceshipTL(),"-=6")
-.add(liftOffTL())
-.add(flightTL(),"target")
+mainTL.add(spaceshipTL())
+// .add(zoomTL(),"-=4")
+// .add(spaceshipTL(),"-=6")
+// .add(liftOffTL())
+// .add(flightTL(),"target")
 
-;//tl END
+// ;//tl END
 
 //mainTL.play("target");
 
