@@ -6,12 +6,4 @@
       <stop stop-color="#FF9696" offset="100%"/>
     </linearGradient>
   </defs>
-  <g id="launch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="background" transform="translate(-8)">
-      <path id="Rectangle" fill="url(#linearGradient-1)" fill-rule="nonzero" d="M8 0h1024v1024H8z"/>
-      <path id="space" fill="#181134" d="M0 0h1039v1024H0z"/>
-      <g id="clouds" opacity=".25" transform="translate(64 418)" fill="#FFF" fill-rule="nonzero">
-      </g>
-    </g>
-  </g>
 </svg>

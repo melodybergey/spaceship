@@ -58,22 +58,37 @@ ready(() => {
   }
 
 
-  // //*********** flamesTL ****************
+  function flamesTL(){
+    let tl = gsap.timeline();
 
-  // function flamesTL(){
-  //   let tl = gsap.timeline();
+    tl.to("#Flames", {
+      duration: 8, 
+      motionPath: {
+        path: "#Line", 
+        align: "#Line", 
+        alignOrigin: [0.5,0.5],
+        autoRotate: 90,
+        delay: 2}});
 
-  //   tl.to("#Flames", {
-  //     duration: 10, 
-  //     motionPath: {
-  //       path: "#Line", 
-  //       align: "#Line", 
-  //       alignOrigin: [0.5,0.5],
-  //       autoRotate: 90}});
+    //tl END
 
-  //   //tl END
+    return tl;
 
-  //   return tl;
+  }
+
+
+  function shadowTL(){
+    let tl = gsap.timeline();
+
+    tl.to("#Shadow", {
+      duration: 2 
+      });
+
+    //tl END
+
+    return tl;
+
+  }
 
   // }
 
