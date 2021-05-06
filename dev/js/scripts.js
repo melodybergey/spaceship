@@ -43,7 +43,10 @@ ready(() => {
   function spaceshipTL(){
     let tl = gsap.timeline();
 
-    tl.to("#Rocket", {duration: 7, motionPath: {path: "#Line", align: "#Line", alignOrigin: [0.5,0.5]}});
+    tl.to("#Rocket", {
+      duration: 7, 
+      motionPath: {
+      path: "#Line", align: "#Line", alignOrigin: [0.5,0.5]}});
 
     //tl END
 
