@@ -44,15 +44,38 @@ ready(() => {
     let tl = gsap.timeline();
 
     tl.to("#Rocket", {
-      duration: 7, 
+      duration: 10, 
       motionPath: {
-      path: "#Line", align: "#Line", alignOrigin: [0.5,0.5]}});
+        path: "#Line", 
+        align: "#Line", 
+        alignOrigin: [0.5,0.5],
+        autoRotate: 90}});
 
     //tl END
 
     return tl;
 
   }
+
+
+  // //*********** flamesTL ****************
+
+  // function flamesTL(){
+  //   let tl = gsap.timeline();
+
+  //   tl.to("#Flames", {
+  //     duration: 10, 
+  //     motionPath: {
+  //       path: "#Line", 
+  //       align: "#Line", 
+  //       alignOrigin: [0.5,0.5],
+  //       autoRotate: 90}});
+
+  //   //tl END
+
+  //   return tl;
+
+  // }
 
 
 //1. set initial properties
