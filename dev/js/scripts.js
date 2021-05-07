@@ -58,30 +58,33 @@ ready(() => {
   }
 
 
-  function flamesTL(){
-    let tl = gsap.timeline();
+  // function flamesTL(){
+  //   let tl = gsap.timeline();
 
-    tl.to("#Flames", {
-      duration: 8, 
-      motionPath: {
-        path: "#Line", 
-        align: "#Line", 
-        alignOrigin: [0.5,0.5],
-        autoRotate: 90,
-        delay: 2}});
+  //   tl.to("#Flames", {
+  //     duration: 8, 
+  //     motionPath: {
+  //       path: "#Line", 
+  //       align: "#Line", 
+  //       alignOrigin: [0.5,0.5],
+  //       autoRotate: 90,
+  //       delay: 2}});
 
-    //tl END
+  //   //tl END
 
-    return tl;
+  //   return tl;
 
-  }
+  // }
 
 
   function shadowTL(){
     let tl = gsap.timeline();
 
     tl.to("#Shadow", {
-      duration: 2 
+      duration: 0.5,
+      scale: 0.25,
+      autoAlpha: 0, 
+      transformOrigin: "20% 0"
       });
 
     //tl END
@@ -100,9 +103,9 @@ ready(() => {
 gsap.set('#svg-container',{visibility:"visible"});
 
 //3. BUILD Main timeline
-mainTL.add(spaceshipTL())
-// .add(zoomTL(),"-=4")
-// .add(spaceshipTL(),"-=6")
+mainTL.add(spaceshipTL(), "blastoff")
+// .add(flamesTL(), "blastoff")
+.add(shadowTL(), "blastoff")
 // .add(liftOffTL())
 // .add(flightTL(),"target")
 
